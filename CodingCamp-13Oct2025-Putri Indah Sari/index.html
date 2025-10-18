@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskMaster - To-Do List</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>To-Do list PUYU</h1>
+        <p class="subtitle">Simple and efficient to-do list application</p>
+      </header>
+
+      <div class="app-container">
+        <div class="left-panel">
+          <div class="card">
+            <h2>Task Statistics</h2>
+            <div class="stats-container">
+              <div class="stat-card total-tasks">
+                <h3>Total Tasks</h3>
+                <div class="stat-value" id="total-tasks">0</div>
+              </div>
+              <div class="stat-card pending-tasks">
+                <h3>Pending</h3>
+                <div class="stat-value" id="pending-tasks">0</div>
+              </div>
+              <div class="stat-card completed-tasks">
+                <h3>Completed</h3>
+                <div class="stat-value" id="completed-tasks">0</div>
+              </div>
+              <div class="stat-card progress-container">
+                <h3>Progress</h3>
+                <div class="stat-value" id="progress-percent">0%</div>
+                <div class="progress-bar">
+                  <div class="progress-fill" id="progress-fill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Add New Task</h2>
+            <form id="task-form">
+              <div class="form-group">
+                <label for="task-title">Task Title</label>
+                <input
+                  type="text"
+                  id="task-title"
+                  placeholder="What needs to be done?"
+                />
+                <div class="error-message" id="title-error">
+                  Task title is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="task-date">Due Date</label>
+                <input type="date" id="task-date" />
+                <div class="error-message" id="date-error">
+                  Please select a valid date
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="add-task">
+                Add Task
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="right-panel">
+          <div class="card">
+            <h2>Your Tasks</h2>
+            <div class="filters">
+              <select id="filter-status">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+              </select>
+              <select id="sort-by">
+                <option value="date">Sort by Date</option>
+                <option value="title">Sort by Title</option>
+              </select>
+            </div>
+            <ul class="task-list" id="task-list">
+              <li class="empty-state">
+                <i>📝</i>
+                <p>No tasks yet. Add a new task to get started!</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
